@@ -1,0 +1,72 @@
+h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;  
+    color: #333;  
+}
+
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+    position: relative;
+}
+
+.button {
+    box-shadow: 0px 15px 0 20px #352d2d, 0px 40px 0 30px #000000;
+    cursor: pointer;
+    background-color: #c0392b;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.button::before {
+    content: '';
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 480px;
+    height: 80px;
+    transition: bottom 0.4s ease;
+}
+
+.button::after {
+    content: '';
+    background-color: #c0392b;
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 480px;
+    height: 80px;
+    transition: height 0.4s ease;
+}
+
+.button:active {
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.button:active::before {
+    bottom: 10%;
+}
+
+.button:active::after {
+    height: 10%;
+}
